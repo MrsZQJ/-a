@@ -1,0 +1,220 @@
+@import './base.less';
+html {
+    font-size: 200px;
+}
+
+body {
+    font-size: 16px;
+    padding: .45rem 0;
+    height: 100vh;
+}
+
+#header {
+    display: flex;
+    height: .425rem;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .icon-back {
+        display: block;
+        width: .4rem;
+        height: .45rem;
+        background: url('../images/sprites.png') no-repeat -0.2rem 0;
+        background-size: 2rem 2rem;
+        background-origin: content-box;
+        background-clip: content-box;
+        padding: .125rem .1rem;
+    }
+    form {
+        flex: 1;
+        i {
+            position: absolute;
+            left: .45rem;
+            top: .1rem;
+            width: 0.2rem;
+            height: 0.2rem;
+            background-image: url(../images/sprites.png);
+            background-size: 2rem 2rem;
+            background-position: -0.58rem -1.08rem;
+            background-origin: content-box;
+            background-clip: content-box;
+        }
+        input {
+            width: 100%;
+            height: .3rem;
+            margin-top: .065rem;
+            border-radius: .15rem;
+            padding-left: .25rem;
+        }
+    }
+    .icon-menu {
+        width: .4rem;
+        height: .45rem;
+        padding: .125rem .1rem;
+        background-position: -0.6rem 0;
+        background-image: url(../images/sprites.png);
+        background-size: 2rem 2rem;
+        background-origin: content-box;
+        background-clip: content-box;
+    }
+}
+
+#main {
+    display: flex;
+    height: 100%;
+    .category-left {
+        border: 1px solid deeppink;
+        height: 100%;
+        width: .85rem;
+        .swiper-container {
+            height: 100%;
+            .swiper-wrapper {
+                height: 100%;
+                .swiper-slide {
+                    height: auto;
+                    ul {
+                        li {
+                            a {
+                                display: block;
+                                height: .45rem;
+                                line-height: .45rem;
+                                text-align: center;
+                                background-color: #eee;
+                            }
+                            &.active {
+                                a {
+                                    background-color: #fff;
+                                    color: red;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // .category-right{
+    //     flex: 1;
+    //     height: 100%;
+    //     padding: .07rem;
+    //     .swiper-container-vertical > .swiper-scrollbar{
+    //         width: 3px;
+    //         background-color: rgba(255,0,0,0.2);
+    //         right: 0px;
+    //     }
+    //     .swiper-container{
+    //         height: 100%;
+    //         .swiper-wrappe{
+    //             height: 100%;
+
+    //             .swiper-slide{
+    //                 height: auto;
+    //                 >a{
+    //                     img{
+    //                         width: 100%;
+    //                     }
+    //                 }
+    //                 .branchList{
+    //                     .jd-brand{
+    //                         h4{
+    //                             line-height: .4rem;
+    //                         }
+    //                         ul{
+    //                             display: flex;
+    //                             flex-wrap: wrap;
+    //                             li{
+    //                                 width: 33.3333%;
+    //                                 a{
+    //                                     display: block;
+    //                                     text-align: center;
+    //                                     img{
+    //                                         width: .7rem;
+    //                                     }
+    //                                     span{
+    //                                         display: block;
+    //                                     }
+    //                                 }
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    .category-right {
+        flex: 1;
+        padding: .07rem;
+        /* 继承main的高度 */
+        height: 100%;
+        .swiper-container {
+            /* 继承right的高度 */
+            /* 设置容器高度和body 和html一样 和屏幕一样 */
+            height: 100%;
+            .swiper-slide {
+                /* 设置子盒子的高度 由内容撑开 默认100% 不需要这个100% 让内容撑开 */
+                /* 之前兼容轮播图效果 轮播图高度和父元素一样 写死100%高度 但是这是内容滚动不需要这个高度100% 覆盖成auto */
+                height: auto;
+            }
+        }
+        /* 设置滚动条的样式 */
+        .swiper-container-vertical > .swiper-scrollbar{
+            width: 3px;
+            background-color: rgba(255,0,0,0.2);
+            right: 0px;
+            .swiper-scrollbar-drag{
+                background-color: hotpink;
+            }
+        }
+        .banner {
+            img {
+                width: 100%;
+            }
+        }
+        h4 {
+            line-height: .4rem;
+        }
+        ul {
+            display: flex;
+            /* 设置flex换行 */
+            flex-wrap: wrap;
+            li {
+                width: 33.33%;
+                a {
+                    display: block;
+                    text-align: center;
+                    img {
+                        width: 0.7rem;
+                    }
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: #fff;
+    ul {
+        display: flex;
+        li {
+            flex: 1;
+            a {
+                display: block;
+                text-align: center;
+                img {
+                    width: .65rem;
+                    height: .5rem;
+                }
+            }
+        }
+    }
+}
